@@ -1,0 +1,25 @@
+---
+export interface Props {
+  href?: string;
+  style?: string;
+}
+
+const { href, style } = Astro.props;
+---
+
+<a href={href}>
+  <button
+    class={"py-2 px-4 text-black font-semibold rounded transition my-2 " +
+      { style }}
+  >
+    <slot />
+  </button>
+</a>
+<style>
+  button {
+    background-color: #00ffc5;
+  }
+  button:hover {
+    background-color: #00d6a4;
+  }
+</style>
