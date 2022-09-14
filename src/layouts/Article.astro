@@ -1,0 +1,117 @@
+---
+import type { Article } from "../types/article";
+
+import Layout from "../layouts/Global.astro";
+
+const { frontmatter } = Astro.props;
+
+const GoogleSchema = {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  headline: frontmatter.title,
+  image: ["https://julienc.me/images/" + frontmatter.image],
+  datePublished: frontmatter.date,
+  dateModified: frontmatter.modified,
+  author: [
+    {
+      "@type": "Person",
+      name: "Julien CAGNIART",
+      url: "https://jcagniart.me/whoami",
+    },
+  ],
+};
+---
+
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  schema={GoogleSchema}
+>
+  <main class="max-w-2xl mx-auto">
+    <img
+      class="w-full object-cover rounded-lg aspect-video mb-4 mt-12"
+      src={"/images/" + frontmatter.image}
+      alt={frontmatter.title}
+    />
+    <a href="/whoami">
+      <p class="text-neutral-400 text-base mb-1">✍️ Wrote by Julien</p>
+    </a>
+
+    <h1
+      class="text-2xl mb-1 font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent lg:text-4xl"
+    >
+      {frontmatter.title}
+    </h1>
+    <p class="text-neutral-400 text-sm mb-8 font-normal">
+      {frontmatter.description}
+    </p>
+
+    <article>
+      <slot />
+    </article>
+  </main>
+</Layout>
+
+<style>
+  article :global(h1, h2, h3, h4, h5, h6) {
+    font-weight: 700;
+    color: #ffffffed;
+    margin-bottom: 4px;
+    margin-top: 16px;
+  }
+  article :global(h1) {
+    font-size: 28px;
+  }
+  article :global(a) {
+    text-decoration: underline;
+  }
+
+  article :global(h2) {
+    font-size: 24px;
+  }
+  article :global(h3) {
+    font-size: 20px;
+  }
+  article :global(h4) {
+    font-size: 18px;
+  }
+  article :global(h5) {
+    font-size: 18px;
+  }
+  article :global(h6) {
+    font-size: 18px;
+  }
+  article :global(p, li, a, span) {
+    font-size: 15px;
+    color: #d4d4d4;
+  }
+  article :global(span) {
+    font-size: 14px;
+  }
+
+  /* For mobile screen */
+  @media (max-width: 640px) {
+    article :global(h1) {
+      font-size: 24px;
+    }
+    article :global(h2) {
+      font-size: 20px;
+    }
+    article :global(h3) {
+      font-size: 18px;
+    }
+    article :global(h4) {
+      font-size: 16px;
+    }
+    article :global(h5) {
+      font-size: 16px;
+    }
+    article :global(h6) {
+      font-size: 16px;
+    }
+    article :global(p, li, a, span) {
+      color: #d4d4d4;
+      font-size: 14px;
+    }
+  }
+</style>
