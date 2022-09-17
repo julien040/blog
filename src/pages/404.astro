@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Global.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout
+  title="Error 404"
+  description="I'm unable to find the page you're looking for. Sorry 😐"
+>
+  <div class="container-404">
+    <img src="/images/404-3D.png" alt="404" />
+    <h1 class="text-xl font-semibold">
+      I'm unable to find the page you're looking for.
+    </h1>
+    <Button href={"/"}>Go back home</Button>
+  </div>
+</Layout>
+
+<style>
+  .container-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+  }
+</style>

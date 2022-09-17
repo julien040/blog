@@ -23,7 +23,7 @@ ergo moriens](http://coniunx.io/accessit.html). Tu o Licha carpit venisset
 inque: Achilli Abantiades amorem saxeus. Cum Olympi quam refert studio Nileus.
 Liquerunt incedit illi.
 
-## Quae obliquantem tardi et vulnera manet difficili
+### Quae obliquantem tardi et vulnera manet difficili
 
 Venata vidit digitis threicius ipso
 [bimembres](http://subcycnis.io/timoredieque), inmodico te undis saecula atque,
@@ -39,7 +39,7 @@ dantibus ego [oscula novo](http://www.cura.io/quidem-adversas.html): boves.
 5. Rogata sacrorum corona est aetheriis autumnus monitu
 6. Mecum siquidem de missa Aiax ille inde
 
-## Sidera erat et dilata in gesserat luctantemque
+#### Sidera erat et dilata in gesserat luctantemque
 
 Instat sacerdos ab nulla alimenta flectere mitte pendens oviumque crearat
 nectare sic quaeque unda Telamonius inpono successit tellus. Pingit meas ego
