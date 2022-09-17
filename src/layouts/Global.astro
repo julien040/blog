@@ -112,6 +112,14 @@ const { title, description, schema } = Astro.props;
         list-style: disc;
         padding-inline-start: 16px;
       }
+
+      li {
+        padding-inline-start: 12px;
+      }
+      li::before {
+        content: "-";
+        margin-right: 12px;
+      }
     </style>
     <slot />
   </body>

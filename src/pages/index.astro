@@ -38,9 +38,9 @@ const sortedArticle = articles
         Welcome to my website
       </h1>
       <p class="text-neutral-400 mt-2 mb-2">
-        I'm <strong>Julien C</strong>, a 19 years old developer. I'm currently
-        studying in a "licence informatique" (French equivalent of a CS degree).
-        I love building project on my spare time. <br />
+        I'm <b>Julien C</b>, a 19 years old developer. I'm currently studying in
+        a "licence informatique" (French equivalent of a CS degree). I love
+        building project on my spare time. <br />
         On this website, you'll find my articles and the list of my projects.
       </p>
     </div>
@@ -55,7 +55,7 @@ const sortedArticle = articles
         sortedArticle.map((article) => (
           <a
             href={article.url}
-            class="inline-block w-[100%] sm:w-[48%] bg-neutral-800 p-4 rounded-lg "
+            class="inline-block w-[100%] sm:w-[48%] bg-neutral-800 p-4 rounded-lg article"
           >
             <img
               src={"/images/" + article.image}
@@ -80,11 +80,9 @@ const sortedArticle = articles
 
 <style>
   a:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
-  a {
-    transition: width 0.9s;
-    transition: background-color 0.15s ease-in-out;
+  .article {
     transition: transform 0.15s ease-in-out;
   }
 </style>

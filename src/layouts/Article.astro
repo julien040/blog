@@ -16,7 +16,7 @@ const GoogleSchema = {
     {
       "@type": "Person",
       name: "Julien CAGNIART",
-      url: "https://jcagniart.me/whoami",
+      url: "https://julienc.me/whoami",
     },
   ],
 };
@@ -27,18 +27,30 @@ const GoogleSchema = {
   description={frontmatter.description}
   schema={GoogleSchema}
 >
+  <script>
+    import { annotate } from "rough-notation";
+    document.querySelectorAll("strong").forEach((el) => {
+      console.log(el);
+
+      const annotation = annotate(el, {
+        type: "underline",
+        iterations: 1,
+        padding: 2,
+        // Yellow for dark mode
+        color: "#f9f871",
+      });
+      annotation.show();
+    });
+  </script>
   <main class="max-w-2xl mx-auto">
     <img
       class="w-full object-cover rounded-lg aspect-video mb-4 mt-12"
       src={"/images/" + frontmatter.image}
       alt={frontmatter.title}
     />
-    <a href="/whoami">
-      <p class="text-neutral-400 text-base mb-1">✍️ Wrote by Julien</p>
-    </a>
 
     <h1
-      class="text-2xl mb-1 font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent lg:text-4xl"
+      class="text-xl mb-1 font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent md:text-2xl"
     >
       {frontmatter.title}
     </h1>
@@ -49,13 +61,21 @@ const GoogleSchema = {
     <article>
       <slot />
     </article>
+    <script
+      src="https://utteranc.es/client.js"
+      repo="julien040/blog"
+      issue-term="pathname"
+      theme="dark-blue"
+      crossorigin="anonymous"
+      async
+    ></script>
   </main>
 </Layout>
 
 <style>
   article :global(h1, h2, h3, h4, h5, h6) {
     font-weight: 700;
-    color: #ffffffed;
+    color: ##ffffffde;
     margin-bottom: 4px;
     margin-top: 16px;
   }
@@ -81,9 +101,10 @@ const GoogleSchema = {
   article :global(h6) {
     font-size: 18px;
   }
-  article :global(p, li, a, span) {
+  article :global(p, li, a, span, strong) {
     font-size: 15px;
-    color: #d4d4d4;
+    font-weight: 400;
+    color: #b9b8b8;
   }
   article :global(span) {
     font-size: 14px;
@@ -110,7 +131,8 @@ const GoogleSchema = {
       font-size: 16px;
     }
     article :global(p, li, a, span) {
-      color: #d4d4d4;
+      font-weight: 400;
+      color: #b9b8b8;
       font-size: 14px;
     }
   }

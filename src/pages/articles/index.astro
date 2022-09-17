@@ -36,7 +36,7 @@ const sortedArticle = articles
         sortedArticle.map((article) => (
           <a
             href={article.url}
-            class="inline-block w-[100%] sm:w-[48%] bg-neutral-800 hover:scale-105  p-4 rounded-lg "
+            class="inline-block w-[100%] sm:w-[48%] bg-neutral-800 hover:scale-105  p-4 rounded-lg article"
           >
             <img
               src={"/images/" + article.image}
@@ -58,3 +58,9 @@ const sortedArticle = articles
     </div>
   </main>
 </Layout>
+
+<style>
+  .article {
+    transition: transform 0.15s ease-in-out;
+  }
+</style>
