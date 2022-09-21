@@ -27,7 +27,6 @@ const { title, description, schema } = Astro.props;
     }
   </head>
   <body>
-    <NavBar />
     <style is:global>
       /* inter-regular - latin */
       @font-face {
@@ -80,7 +79,7 @@ const { title, description, schema } = Astro.props;
       html {
         background-color: var(--bg-color);
       }
-      body {
+      main {
         margin: auto;
         padding: 24px;
         max-width: 800px;
@@ -120,6 +119,9 @@ const { title, description, schema } = Astro.props;
         margin-right: 12px;
       }
     </style>
-    <slot />
+    <main>
+      <NavBar />
+      <slot />
+    </main>
   </body>
 </html>

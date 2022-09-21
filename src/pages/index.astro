@@ -30,52 +30,47 @@ const sortedArticle = articles
   title="Julien"
   description="I'm Julien, a 19 years old developer. I occasionnaly publish articles about programming and tech."
 >
-  <main>
-    <div class="bg-neutral-800 p-6 rounded-lg">
-      <h1
-        class="lg:text-4xl md:text-3xl text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-      >
-        Welcome to my website
-      </h1>
-      <p class="text-neutral-400 text-sm md:text-[15px] mt-2 mb-2">
-        I'm <b>Julien C</b>, a 19 years old developer. I'm currently studying
-        for a "licence informatique" (the French equivalent of a CS degree). I
-        love building projects in my spare time. <br />
-        You'll find my articles and the list of my projects on this website.
-      </p>
-    </div>
+  <div class="bg-neutral-800 p-6 rounded-lg">
+    <h1
+      class="lg:text-4xl md:text-3xl text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+    >
+      Welcome to my website
+    </h1>
+    <p class="text-neutral-400 text-sm md:text-[15px] mt-2 mb-2">
+      I'm <b>Julien C</b>, a 19 years old developer. I'm currently studying for
+      a "licence informatique" (the French equivalent of a CS degree). I love
+      building projects in my spare time. <br />
+      You'll find my articles and the list of my projects on this website.
+    </p>
+  </div>
 
-    <h2 class="text-base md:text-xl mt-8 mb-4">
-      My {sortedArticle.length} last article{
-        sortedArticle.length > 1 ? "s" : ""
-      }
-    </h2>
-    <div class="flex flex-wrap gap-3">
-      {
-        sortedArticle.map((article) => (
-          <a
-            href={article.url}
-            class="inline-block w-[100%] sm:w-[48%] bg-neutral-800 p-4 rounded-lg article"
-          >
-            <img
-              src={"/images/" + article.image}
-              class="w-full object-cover rounded-lg aspect-video mb-4"
-            />
-            <div>
-              <h2 class="font-medium text-sm  md:text-base ">
-                {article.title}
-              </h2>
-              <p class="text-neutral-500">
-                {dayjs(article.date, "YYYY-MM-DD")
-                  .format("DD/MM/YYYY")
-                  .toString()}
-              </p>
-            </div>
-          </a>
-        ))
-      }
-    </div>
-  </main>
+  <h2 class="text-base md:text-xl mt-8 mb-4">
+    My {sortedArticle.length} last article{sortedArticle.length > 1 ? "s" : ""}
+  </h2>
+  <div class="flex flex-wrap gap-3">
+    {
+      sortedArticle.map((article) => (
+        <a
+          href={article.url}
+          class="inline-block w-[100%] sm:w-[48%] bg-neutral-800 p-4 rounded-lg article"
+        >
+          <img
+            src={"/images/" + article.image}
+            class="w-full object-cover rounded-lg aspect-video mb-4"
+            alt={article.title}
+          />
+          <div>
+            <h2 class="font-medium text-sm  md:text-base ">{article.title}</h2>
+            <p class="text-neutral-500">
+              {dayjs(article.date, "YYYY-MM-DD")
+                .format("DD/MM/YYYY")
+                .toString()}
+            </p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
 </Layout>
 
 <style>

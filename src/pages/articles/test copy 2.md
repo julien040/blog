@@ -3,8 +3,8 @@ title: "Why I prefer a MacBook Pro over a Windows laptop ?"
 description: Pariatur ad ut esse sit occaecat aliqua proident Lorem. Minim amet consectetur et nostrud non proident mollit ex ut labore.
 date: 28-08-2020
 modified: 25-08-2020
-layout: ../../layouts/Article.astro
-image: "HCaptcha.png"
+layout: ../../layouts/article.astro
+image: "hCaptcha.png"
 ---
 
 Lorem markdownum corpora repetens saltus spatiumque Bacchi aures [accipiunt

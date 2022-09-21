@@ -5,7 +5,7 @@ started: 25-08-2020
 finished: 30-08-2020
 projectLink: https://www.google.com
 layout: ../../layouts/article.astro
-image: "HCaptcha.png"
+image: "hCaptcha.png"
 
 ---
 
