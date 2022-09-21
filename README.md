@@ -9,4 +9,4 @@ I'm a student in computer science at the "Université de Pau et des Pays de l'Ad
 ## How this blog is made
 
 This blog is made with [Astro](https://astro.build/), a static site generator. The source code is available on [GitHub](
-https://github.com/julien040/blog). I use TailwindCSS for the styling. Cloudflare Pages is used to host the website.
+https://github.com/julien040/blog). I use TailwindCSS for the styling. Vercel is used to host the website.
