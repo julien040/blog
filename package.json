@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.1.7",
+    "astro": "^1.2.8",
     "astro-imagetools": "^0.6.10",
     "dayjs": "^1.11.5",
     "rough-notation": "^0.5.1"
