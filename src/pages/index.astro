@@ -30,17 +30,22 @@ const sortedArticle = articles
   title="Julien"
   description="I'm Julien, a 19 years old developer. I occasionnaly publish articles about programming and tech."
 >
-  <div class="bg-neutral-800 p-6 rounded-lg">
+  <div class="">
     <h1
-      class="lg:text-4xl md:text-3xl text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+      class="max-w-fit lg:text-4xl md:text-3xl text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
     >
-      Welcome to my website
+      Hi there <span class="lg:text-4xl md:text-3xl text-2xl font-bold">👋</span
+      >
     </h1>
-    <p class="text-neutral-400 text-sm md:text-[15px] mt-2 mb-2">
-      I'm <b>Julien C</b>, a 19 years old developer. I'm currently studying for
-      a "licence informatique" (the French equivalent of a CS degree). I love
-      building projects in my spare time. <br />
+    <p class="text-md mt-2 text-white/60">
+      I'm Julien, a student in computer science. <br />
+      On this website, I publish articles about what I've discovered and created.
+      <!--  <p class="text-neutral-400 text-sm md:text-[15px] mt-2 mb-2">
+      I'm <b>Julien C</b>. I'm currently studying for a "licence informatique"
+      (the French equivalent of a CS degree). I love building projects in my
+      spare time. <br />
       You'll find my articles and the list of my projects on this website.
+    </p> -->
     </p>
   </div>
 
@@ -52,7 +57,7 @@ const sortedArticle = articles
       sortedArticle.map((article) => (
         <a
           href={article.url}
-          class="inline-block w-[100%] sm:w-[48%] bg-neutral-800 p-4 rounded-lg article"
+          class="inline-block w-[100%] sm:w-[48%] bg-neutral-800/60 p-4 rounded-lg article"
         >
           <img
             src={"/images/" + article.image}
@@ -61,7 +66,10 @@ const sortedArticle = articles
           />
           <div>
             <h2 class="font-medium text-sm  md:text-base ">{article.title}</h2>
-            <p class="text-neutral-500">
+            <p class="text-xs md:text-sm text-white/40">
+              {article.description}
+            </p>
+            <p class="text-white/50 mt-2 text-xs text-right">
               {dayjs(article.date, "YYYY-MM-DD")
                 .format("DD/MM/YYYY")
                 .toString()}

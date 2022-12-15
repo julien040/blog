@@ -7,6 +7,11 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 
 const projects = await Astro.glob<Project>("./*.md");
+projects.sort((a, b) => {
+  const aDate = dayjs(a.frontmatter.started, "DD-MM-YYYY");
+  const bDate = dayjs(b.frontmatter.started, "DD-MM-YYYY");
+  return bDate.diff(aDate);
+});
 ---
 
 <Layout
@@ -19,7 +24,7 @@ const projects = await Astro.glob<Project>("./*.md");
     >
       My portfolio
     </h1>
-    <p class="text-neutral-400 text-sm md:text-base mt-1 mb-6">
+    <p class="text-neutral-400 text-sm mt-1 mb-6">
       This page compiles the list of the projects I have created. If you are a
       recruiter, feel free to check my experiences here.
     </p>
@@ -38,18 +43,23 @@ const projects = await Astro.glob<Project>("./*.md");
         return (
           <a
             href={project.url}
-            class="project flex gap-3 md:gap-4 flex-col md:flex-row items-start bg-white/5 hover:scale-[102%] my-4  rounded-lg  p-4"
+            class="project flex gap-3 md:gap-4 flex-col md:flex-row items-start bg-white/5 hover:scale-[102%] my-4  rounded-xl  p-6"
           >
             <img
               src={"/images/" + project.frontmatter.image}
               alt={project.frontmatter.title}
-              class="w-full rounded-lg md:w-1/3 aspect-video object-cover"
+              class="w-full rounded-md md:w-1/3 aspect-video object-cover"
             />
-            <div class="flex items-start justify-start flex-col self-stretch">
-              <h2 id="title" class="text-xl text-neutral-300">
+            <div class="flex items-start justify-start flex-col self-stretch w-full">
+              <h2
+                id="title"
+                class="text-xl tracking-tighter font-semibold text-white/80"
+              >
                 {project.frontmatter.title}
               </h2>
-              <p class="text-neutral-500">{project.frontmatter.description}</p>
+              <p class="text-neutral-500 text-sm">
+                {project.frontmatter.description}
+              </p>
               <p class="md:text-sm text-xs  mt-4 md:mt-auto self-end text-neutral-400">
                 {dateString}
               </p>

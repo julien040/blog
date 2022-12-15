@@ -85,7 +85,6 @@ const { title, description, schema } = Astro.props;
       }
       main {
         margin: auto;
-        padding: 24px;
         max-width: 800px;
       }
 
@@ -113,19 +112,40 @@ const { title, description, schema } = Astro.props;
       ul {
         list-style: disc;
         padding-inline-start: 16px;
+        margin-left: 16px;
       }
 
-      li {
+      /* li {
         padding-inline-start: 12px;
-      }
-      li::before {
+      } */
+      /* li::before {
         content: "-";
         margin-right: 12px;
-      }
+      } */
     </style>
-    <main>
+    <script async defer src="https://simple.julienc.me/latest.js"></script>
+    <noscript
+      ><img
+        src="https://simple.julienc.me/noscript.gif"
+        alt=""
+        referrerpolicy="no-referrer-when-downgrade"
+      />
+    </noscript>
+    <main class="p-6">
       <NavBar />
       <slot />
+      <footer class="pb-2 pt-12 text-center">
+        <p class="text-white/40 text-sm">
+          Created by Julien
+          <br />
+          Unless specified, all content is licensed under <a
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            class="text-white/50 text-sm"
+          >
+            CC BY-NC-SA 4.0</a
+          >
+        </p>
+      </footer>
     </main>
   </body>
 </html>
