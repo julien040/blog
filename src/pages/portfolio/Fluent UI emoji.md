@@ -4,7 +4,7 @@ description: Search and find the emoji you want in the Fluent UI emoji set
 started: 14-11-2022
 finished: 24-11-2022
 projectLink: https://fluent-ui.julienc.me
-layout: "../../../layouts/article.astro"
+layout: "../../layouts/Article.astro"
 image: "header/Fluent-UI.png"
 
 ---
