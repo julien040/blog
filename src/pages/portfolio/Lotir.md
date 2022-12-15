@@ -4,8 +4,8 @@ description: A MongoDB hackathon project
 started: 15-12-2021
 finished: 09-01-2022
 projectLink: https://lotir.ml
-layout: ../../layouts/article.astro
-image: "header/lotir.png"
+layout: "../../layouts/article.astro"
+image: "header/Lotir.png"
 
 ---
 

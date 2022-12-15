@@ -4,7 +4,7 @@ description: A simple website to search subtitles of Vilebrequin's YouTube chann
 started: 22-08-2022
 finished: 29-08-2022
 projectLink: https://vilebrequin.julienc.me
-layout: ../../layouts/article.astro
+layout: "../../layouts/article.astro"
 image: "header/vilebrequin.png"
 
 ---

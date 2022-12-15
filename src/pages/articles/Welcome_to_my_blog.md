@@ -3,8 +3,8 @@ title: "Welcome to my blog"
 description: An introduction to my blog
 date: 26-11-2020
 modified: 26-11-2020
-layout: ../../layouts/article.astro
-image: "header/introduction.png"
+layout: "../../layouts/article.astro"
+image: "header/Introduction.png"
 ---
 
 ## Hey ! 👋
