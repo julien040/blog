@@ -3,7 +3,7 @@ title: Pacifiscan
 description: Help caledonians to recycle their waste
 started: 10-04-2021
 projectLink: https://pacifiscan.org
-layout: "../../layouts/article.astro"
+layout: "../../../layouts/article.astro"
 image: "header/Pacifiscan.png"
 
 ---
