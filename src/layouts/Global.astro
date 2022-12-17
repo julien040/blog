@@ -26,7 +26,7 @@ const { title, description, schema } = Astro.props;
       )
     }
   </head>
-  <body>
+  <body class="p-6">
     <style is:global>
       /* inter-regular - latin */
       @font-face {
@@ -83,7 +83,7 @@ const { title, description, schema } = Astro.props;
       html {
         background-color: var(--bg-color);
       }
-      main {
+      body {
         margin: auto;
         max-width: 800px;
       }
@@ -131,21 +131,19 @@ const { title, description, schema } = Astro.props;
         referrerpolicy="no-referrer-when-downgrade"
       />
     </noscript>
-    <main class="p-6">
-      <NavBar />
-      <slot />
-      <footer class="pb-2 pt-12 text-center">
-        <p class="text-white/40 text-sm">
-          Created by Julien
-          <br />
-          Unless specified, all content is licensed under <a
-            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-            class="text-white/50 text-sm"
-          >
-            CC BY-NC-SA 4.0</a
-          >
-        </p>
-      </footer>
-    </main>
+    <NavBar />
+    <slot />
+    <footer class="pb-2 pt-12 text-center">
+      <p class="text-white/40 text-sm">
+        Created by Julien
+        <br />
+        Unless specified, all content is licensed under <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+          class="text-white/50 text-sm"
+        >
+          CC BY-NC-SA 4.0</a
+        >
+      </p>
+    </footer>
   </body>
 </html>

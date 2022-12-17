@@ -25,6 +25,86 @@ const GoogleSchema = {
   description={frontmatter.description}
   schema={GoogleSchema}
 >
+  <!-- We need to use is:inline in order to apply the style to the children -->
+  <style is:inline>
+    article h1,
+    article h2,
+    article h3,
+    article h4,
+    article h5,
+    article h6 {
+      font-weight: 700;
+      color: #ffffffde;
+      margin-bottom: 4px;
+      margin-top: 32px;
+    }
+    article h1 {
+      font-size: 28px;
+    }
+    article a {
+      text-decoration: underline;
+      color: #b9b8b8;
+    }
+    article a:hover {
+      /* Gradient */
+      background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      text-decoration: none;
+      transition: all 0.25s ease-in-out;
+    }
+
+    article h2 {
+      font-size: 20px;
+    }
+    article h3 {
+      font-size: 18px;
+    }
+    article h4,
+    article h5,
+    article h6 {
+      font-size: 16px;
+    }
+    article p,
+    article li,
+    article a,
+    article span,
+    article strong {
+      font-size: 15px;
+      font-weight: 400;
+      color: #b9b8b8;
+    }
+
+    /* For mobile screen */
+    @media (max-width: 640px) {
+      article h1 {
+        font-size: 24px;
+      }
+      article h2 {
+        font-size: 20px;
+      }
+      article h3 {
+        font-size: 18px;
+      }
+      article h4 {
+        font-size: 16px;
+      }
+      article h5,
+      article h6 {
+        font-size: 16px;
+      }
+      article p,
+      article li,
+      article a,
+      article span {
+        font-weight: 400;
+        color: #b9b8b8;
+        font-size: 14px;
+      }
+    }
+  </style>
   <script>
     import { annotate } from "rough-notation";
     document.querySelectorAll("strong").forEach((el) => {
@@ -40,7 +120,7 @@ const GoogleSchema = {
       annotation.show();
     });
   </script>
-  <main class="max-w-2xl mx-auto">
+  <div class="max-w-2xl mx-auto">
     <img
       class="w-full object-cover rounded-lg aspect-video mb-4 md:mt-8 transition-all"
       src={"/images/" + frontmatter.image}
@@ -70,82 +150,5 @@ const GoogleSchema = {
       crossorigin="anonymous"
       async
     ></script>
-  </main>
+  </div>
 </Layout>
-
-<style>
-  article :global(h1, h2, h3, h4, h5, h6) {
-    font-weight: 700;
-    color: #ffffffde;
-    margin-bottom: 4px;
-    margin-top: 32px;
-  }
-  article :global(h1) {
-    font-size: 28px;
-  }
-  article :global(a) {
-    text-decoration: underline;
-    color: #b9b8b8;
-  }
-  article :global(a):hover {
-    /* Gradient */
-    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    text-decoration: none;
-    transition: all 0.25s ease-in-out;
-  }
-
-  article :global(h2) {
-    font-size: 20px;
-  }
-  article :global(h3) {
-    font-size: 18px;
-  }
-  article :global(h4) {
-    font-size: 16px;
-  }
-  article :global(h5) {
-    font-size: 16px;
-  }
-  article :global(h6) {
-    font-size: 18px;
-  }
-  article :global(p, li, a, span, strong) {
-    font-size: 15px;
-    font-weight: 400;
-    color: #b9b8b8;
-  }
-  article :global(span) {
-    font-size: 14px;
-  }
-
-  /* For mobile screen */
-  @media (max-width: 640px) {
-    article :global(h1) {
-      font-size: 24px;
-    }
-    article :global(h2) {
-      font-size: 20px;
-    }
-    article :global(h3) {
-      font-size: 18px;
-    }
-    article :global(h4) {
-      font-size: 16px;
-    }
-    article :global(h5) {
-      font-size: 16px;
-    }
-    article :global(h6) {
-      font-size: 16px;
-    }
-    article :global(p, li, a, span) {
-      font-weight: 400;
-      color: #b9b8b8;
-      font-size: 14px;
-    }
-  }
-</style>
