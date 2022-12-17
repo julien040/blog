@@ -29,35 +29,31 @@ const sortedArticle = articles
   title="Julien"
   description="I'm Julien. I occasionnaly publish articles about programming and tech."
 >
-  <main>
-    <h2 class="text-base md:text-xl mb-4 max-w-fit">My last articles</h2>
-    <div class="flex flex-wrap gap-3">
-      {
-        sortedArticle.map((article) => (
-          <a
-            href={article.url}
-            class=" w-[100%] sm:w-[48%] bg-neutral-800/70 hover:scale-105  p-4 rounded-xl article"
-          >
-            <img
-              src={"/images/" + article.image}
-              class="w-full object-cover rounded-md aspect-video mb-4"
-            />
-            <div>
-              <h2 class="font-medium text-sm  md:text-base ">
-                {article.title}
-              </h2>
-              <p class="text-sm text-white/40">{article.description}</p>
-              <p class="text-white/50 mt-3 text-right">
-                {dayjs(article.date, "YYYY-MM-DD")
-                  .format("DD/MM/YYYY")
-                  .toString()}
-              </p>
-            </div>
-          </a>
-        ))
-      }
-    </div>
-  </main>
+  <h2 class="text-base md:text-xl mb-4 max-w-fit">My last articles</h2>
+  <div class="flex flex-wrap gap-3">
+    {
+      sortedArticle.map((article) => (
+        <a
+          href={article.url}
+          class=" w-[100%] sm:w-[48%] bg-neutral-800/70 hover:scale-105  p-4 rounded-xl article"
+        >
+          <img
+            src={"/images/" + article.image}
+            class="w-full object-cover rounded-md aspect-video mb-4"
+          />
+          <div>
+            <h2 class="font-medium text-sm  md:text-base ">{article.title}</h2>
+            <p class="text-sm text-white/40">{article.description}</p>
+            <p class="text-white/50 mt-3 text-right">
+              {dayjs(article.date, "YYYY-MM-DD")
+                .format("DD/MM/YYYY")
+                .toString()}
+            </p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
 </Layout>
 
 <style>

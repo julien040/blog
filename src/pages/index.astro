@@ -34,10 +34,11 @@ const sortedArticle = articles
     <h1
       class="max-w-fit lg:text-4xl md:text-3xl text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
     >
-      Hi there <span class="lg:text-4xl md:text-3xl text-2xl font-bold">👋</span
+      Hi there <span
+        class="lg:text-4xl md:text-3xl text-2xl font-bold text-black">👋</span
       >
     </h1>
-    <p class="text-md mt-2 text-white/60">
+    <p class="text-md mt-2 text-white/60 text-sm">
       I'm Julien, a student in computer science. <br />
       On this website, I publish articles about what I've discovered and created.
       <!--  <p class="text-neutral-400 text-sm md:text-[15px] mt-2 mb-2">
@@ -49,8 +50,8 @@ const sortedArticle = articles
     </p>
   </div>
 
-  <h2 class="text-base md:text-xl mt-8 mb-4">
-    My {sortedArticle.length} last article{sortedArticle.length > 1 ? "s" : ""}
+  <h2 class="text-base md:text-xl mt-8 mb-4 text-white/90">
+    {sortedArticle.length > 1 ? "Latest articles" : "Latest article"}
   </h2>
   <div class="flex flex-wrap gap-3">
     {

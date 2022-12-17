@@ -26,7 +26,7 @@ const { title, description, schema } = Astro.props;
       )
     }
   </head>
-  <body class="p-6">
+  <body class="p-6 mx-auto min-h-screen">
     <style is:global>
       /* inter-regular - latin */
       @font-face {
@@ -84,8 +84,11 @@ const { title, description, schema } = Astro.props;
         background-color: var(--bg-color);
       }
       body {
-        margin: auto;
         max-width: 800px;
+      }
+
+      main {
+        min-height: 74vh;
       }
 
       h1,
@@ -96,7 +99,6 @@ const { title, description, schema } = Astro.props;
       h6 {
         font-family: "Inter", sans-serif;
         font-weight: 600;
-
         letter-spacing: -0.05em;
         transition: font-size 0.3s;
       }
@@ -132,7 +134,9 @@ const { title, description, schema } = Astro.props;
       />
     </noscript>
     <NavBar />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <footer class="pb-2 pt-12 text-center">
       <p class="text-white/40 text-sm">
         Created by Julien
