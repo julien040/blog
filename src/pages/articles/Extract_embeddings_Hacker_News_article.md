@@ -12,7 +12,7 @@ For the past weeks, I have been looking around the concept of embeddings. Even t
 Here’s how I have extracted thousands of articles from Hacker News.
 
 > Disclaimer: I have no background either in data science or professional software engineering, so if I make a mistake, please report it kindly in the comments.
-> 
+
 ## What is an embedding?
 An embedding is the representation of a real-word object (an image, an article, a word) into a vector of dimension n. By representing it mathematically, we can compare, group and classify these objects easily.
 
@@ -81,7 +81,8 @@ I wanted to plot them, but vectors from Open AI have a length of 1536 and my scr
 ### Scatter plot
 Here is the result:
 ![](/images/articles/hn-embedding/projection-embeddings.png)
-To colour the scatter plot, I have used the K-means algorithm from Scikit Learn. I made 9 clusters, labeled them one by one and plotted them using Plotly. You can find the interactive version [here](https://julienc.me/).
+To colour the scatter plot, I have used the K-means algorithm from Scikit Learn. I made 9 clusters, labeled them one by one and plotted them using Plotly. You can find the interactive version [here](/embed/visualisation/projection-embeddings.html).
+
 The main topics are:
 - Data privacy, Security 
 - Finance
