@@ -15,6 +15,8 @@
     "astro": "^2.6.4",
     "astro-imagetools": "^0.6.10",
     "dayjs": "^1.11.5",
+    "remark-breaks": "^3.0.3",
+    "remark-toc": "^8.0.1",
     "rollup": "^3.25.1",
     "rough-notation": "^0.5.1",
     "tailwindcss": "^3.3.2"
