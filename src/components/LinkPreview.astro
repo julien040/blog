@@ -1,0 +1,23 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+	href: string;
+}
+
+const { href, title, description } = Astro.props;
+---
+
+<a href={href}>
+    <div class="w-full flex gap-2 p-4 rounded-xl bg-gradient-to-tl from-[#f093fb] to-[#f5576c]  transition-all duration-200 ease-in-out">
+        <div class="w-full">
+            <div class="text-lg font-semibold">{title}</div>
+            <div class="text-sm text-white/70">{description}</div>
+        </div>
+
+        <p>
+            {">"}
+        </p>
+
+    </div>
+</a>
