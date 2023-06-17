@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Global.astro";
+import LinkPreview from "../components/LinkPreview.astro";
 
 const { frontmatter } = Astro.props;
 
@@ -33,13 +34,13 @@ const GoogleSchema = {
     article h4,
     article h5,
     article h6 {
-      font-weight: 700;
-      color: #ffffffde;
+      font-weight: 600;
+      color: #ffffffce;
       margin-bottom: 4px;
-      margin-top: 32px;
+      margin-top: 16px;
     }
     article h1 {
-      font-size: 28px;
+      font-size: 36px;
     }
     article a {
       text-decoration: underline;
@@ -57,24 +58,73 @@ const GoogleSchema = {
     }
 
     article h2 {
-      font-size: 20px;
+      font-size: 24px;
     }
     article h3 {
-      font-size: 18px;
+      font-size: 20px;
     }
     article h4,
     article h5,
     article h6 {
-      font-size: 16px;
+      font-size: 18px;
     }
     article p,
     article li,
     article a,
-    article span,
-    article strong {
+    article span {
       font-size: 15px;
       font-weight: 400;
       color: #b9b8b8;
+    }
+
+    article strong {
+      font-weight: 600;
+      color: #ffffffd5;
+    }
+
+    /* Put a nice gray background for quotes */
+    article blockquote {
+      padding: 16px 16px;
+      background-color: #ffffff22;
+      margin: 16px 0;
+      border-radius: 8px;
+    }
+
+    /* Remove the padding bottom of a p inside a blockquote
+    so that the margin is equal from top and bottom */
+    article blockquote > p,
+    article li p {
+      padding-bottom: 0;
+    }
+
+    article p,
+    article ul {
+      padding-bottom: 10px;
+    }
+
+    article img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 16px 0;
+    }
+
+    article ul,
+    article ol {
+      padding-inline-start: 20px;
+    }
+
+    article li {
+      list-style-type: disc;
+    }
+
+    article pre {
+      margin-bottom: 12px;
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    article pre code span {
+      font-size: 13px;
     }
 
     /* For mobile screen */
@@ -106,7 +156,7 @@ const GoogleSchema = {
     }
   </style>
   <script>
-    import { annotate } from "rough-notation";
+    /* import { annotate } from "rough-notation";
     document.querySelectorAll("strong").forEach((el) => {
       console.log(el);
 
@@ -118,7 +168,7 @@ const GoogleSchema = {
         color: "#f9f871",
       });
       annotation.show();
-    });
+    }); */
   </script>
   <div class="max-w-2xl mx-auto">
     <img
@@ -137,6 +187,17 @@ const GoogleSchema = {
     >
       {frontmatter.description}
     </p>
+    {
+      frontmatter.project_url && (
+        <div class="mb-4">
+          <LinkPreview
+            href={frontmatter.project_url}
+            title="Access the project here 📌"
+            description={frontmatter.project_url}
+          />
+        </div>
+      )
+    }
 
     <article class="mb-8">
       <slot />
@@ -148,7 +209,6 @@ const GoogleSchema = {
       issue-term="pathname"
       theme="github-dark"
       crossorigin="anonymous"
-      async
-    ></script>
+      async></script>
   </div>
 </Layout>
