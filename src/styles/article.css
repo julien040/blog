@@ -1,0 +1,140 @@
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  font-weight: 600;
+  color: #ffffffce;
+  margin-bottom: 4px;
+  margin-top: 16px;
+}
+article h1 {
+  font-size: 36px;
+}
+
+article a:hover {
+  /* Gradient */
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+
+article h2 {
+  font-size: 24px;
+}
+article h3 {
+  font-size: 20px;
+}
+article h4,
+article h5,
+article h6 {
+  font-size: 18px;
+}
+article p,
+article li,
+article a,
+article span {
+  font-size: 15px;
+  font-weight: 400;
+  color: #b9b8b8;
+}
+
+/* Remove underline from links inside a list */
+article a:not(ul a) {
+  text-decoration: underline;
+  /* color: #ececec; */
+}
+
+article strong {
+  font-weight: 600;
+  color: #ffffffd5;
+}
+
+/* Put a nice gray background for quotes */
+article blockquote {
+  padding: 16px 16px;
+  background-color: #ffffff22;
+  margin: 16px 0;
+  border-radius: 8px;
+}
+
+/* Remove the padding bottom of a p inside a blockquote
+    so that the margin is equal from top and bottom */
+article blockquote > p,
+article li p {
+  padding-bottom: 0;
+}
+
+article p + ul {
+  padding-bottom: 12px;
+}
+
+article p + ol {
+  padding-bottom: 12px;
+}
+
+article p + blockquote {
+  padding-bottom: 12px;
+}
+
+article p + p {
+  padding-top: 12px;
+}
+
+article img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+article ul,
+article ol {
+  padding-inline-start: 20px;
+  padding-top: 4px;
+}
+
+article li {
+  list-style-type: disc;
+}
+
+article pre {
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+article pre code span {
+  font-size: 13px;
+}
+
+/* For mobile screen */
+@media (max-width: 640px) {
+  article h1 {
+    font-size: 24px;
+  }
+  article h2 {
+    font-size: 20px;
+  }
+  article h3 {
+    font-size: 18px;
+  }
+  article h4 {
+    font-size: 16px;
+  }
+  article h5,
+  article h6 {
+    font-size: 16px;
+  }
+  article p,
+  article li,
+  article a,
+  article span {
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
