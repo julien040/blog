@@ -31,7 +31,7 @@ const projects: Project[] = await getProjects();
           class="project flex gap-3 md:gap-4 flex-col md:flex-row items-start bg-white/5 hover:scale-[102%] my-4  rounded-xl  p-6"
         >
           <img
-            src={"/images/" + project.image}
+            src={project.image}
             alt={project.title}
             class="w-full rounded-md md:w-1/3 aspect-video object-cover"
           />

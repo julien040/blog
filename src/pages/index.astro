@@ -1,29 +1,10 @@
 ---
 import Layout from "../layouts/Global.astro";
-import type { Article } from "../types/article";
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-dayjs.extend(customParseFormat);
+import { getArticles } from "../utils/getArticles";
+import ArticleCard from "../components/ArticleCard.astro";
 
 // Return the list of articles in the "articles" directory
-const articles = await Astro.glob<Article>("./articles/*.md");
-
-// Parse the date of each article, sort by date descending and return an array of the 4 last articles
-const sortedArticle = articles
-  .map((article) => {
-    const { title, date, description, image } = article.frontmatter;
-    return {
-      title,
-      date: dayjs(date, "DD-MM-YYYY").format("YYYY-MM-DD"),
-      description,
-      url: article.url,
-      image: image,
-    };
-  })
-  .sort((a, b) => {
-    return dayjs(b.date).diff(dayjs(a.date));
-  })
-  .splice(0, 5);
+const articles = await getArticles();
 ---
 
 <Layout
@@ -41,44 +22,14 @@ const sortedArticle = articles
     <p class="text-md mt-2 text-white/60 text-sm">
       I'm Julien, a student in computer science. <br />
       On this website, I publish articles about what I've discovered and created.
-      <!--  <p class="text-neutral-400 text-sm md:text-[15px] mt-2 mb-2">
-      I'm <b>Julien C</b>. I'm currently studying for a "licence informatique"
-      (the French equivalent of a CS degree). I love building projects in my
-      spare time. <br />
-      You'll find my articles and the list of my projects on this website.
-    </p> -->
     </p>
   </div>
 
   <h2 class="text-base md:text-xl mt-8 mb-4 text-white/90">
-    {sortedArticle.length > 1 ? "Latest articles" : "Latest article"}
+    {articles.length > 1 ? "Latest articles" : "Latest article"}
   </h2>
   <div class="flex flex-wrap gap-3">
-    {
-      sortedArticle.map((article) => (
-        <a
-          href={article.url}
-          class="inline-block w-[100%] sm:w-[48%] bg-neutral-800/60 p-4 rounded-lg article"
-        >
-          <img
-            src={"/images/" + article.image}
-            class="w-full object-cover rounded-lg aspect-video mb-4"
-            alt={article.title}
-          />
-          <div>
-            <h2 class="font-medium text-sm  md:text-base ">{article.title}</h2>
-            <p class="text-xs md:text-sm text-white/40">
-              {article.description}
-            </p>
-            <p class="text-white/50 mt-2 text-xs text-right">
-              {dayjs(article.date, "YYYY-MM-DD")
-                .format("DD/MM/YYYY")
-                .toString()}
-            </p>
-          </div>
-        </a>
-      ))
-    }
+    {articles.map((article) => <ArticleCard article={article} />)}
   </div>
 </Layout>
 

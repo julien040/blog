@@ -72,6 +72,7 @@ article li p {
 
 article p + ul {
   padding-bottom: 12px;
+  padding-top: 4px;
 }
 
 article p + ol {
@@ -95,7 +96,6 @@ article img {
 article ul,
 article ol {
   padding-inline-start: 20px;
-  padding-top: 4px;
 }
 
 article li {
