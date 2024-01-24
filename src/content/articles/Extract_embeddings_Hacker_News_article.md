@@ -3,8 +3,7 @@ title: "Extracting embeddings from popular articles on Hacker News"
 description: How have I extracted more than 100,000 embeddings of popular articles on Hacker News?
 date: 11-06-2023
 modified: 16-06-2023
-layout: "../../layouts/article.astro"
-image: "header/hn-embedding.png"
+image: "/images/header/hn-embedding.png"
 project_url: https://hn-recommend.julienc.me
 ---
 

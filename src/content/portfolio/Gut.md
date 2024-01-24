@@ -2,8 +2,7 @@
 title: Gut, an alternative git CLI
 description: Gut is an alternative git CLI for Windows, macOS, and Linux. I’ve built it using Golang.
 started: 22-12-2022
-layout: "../../layouts/article.astro"
-image: "header/gut.png"
+image: "/images/header/gut.png"
 project_url: https://gut-cli.dev
 
 ---

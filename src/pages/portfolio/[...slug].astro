@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import Article from "../../layouts/article.astro";
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection("portfolio");
+  return projectEntries.map((entry) => {
+    return {
+      params: { slug: entry.slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
+---
+
+<Article
+  title={entry.data.title}
+  date={entry.data.started}
+  modified={entry.data.finished ?? new Date().toISOString()}
+  description={entry.data.description}
+  image={entry.data.image}
+>
+  <Content />
+</Article>

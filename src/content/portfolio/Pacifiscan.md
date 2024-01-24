@@ -3,8 +3,7 @@ title: Pacifiscan
 description: Help caledonians to recycle their waste thanks to a native mobile app and machine learning. 
 started: 10-04-2021
 projectLink: https://pacifiscan.org
-layout: "../../layouts/article.astro"
-image: "header/Pacifiscan.png"
+image: "/images/header/Pacifiscan.png"
 project_url: https://pacifiscan.org
 
 ---

@@ -4,6 +4,7 @@ interface Project {
   started: string;
   finished?: string;
   image: string;
+  url: string;
 }
 
 export type { Project };

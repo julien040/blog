@@ -1,0 +1,28 @@
+---
+type Props = {
+  article: {
+    title: string;
+    description: string;
+    image: string;
+    url: string;
+    date: string;
+  };
+};
+
+const { article } = Astro.props;
+---
+
+<a
+  href={article.url}
+  class="w-[100%] sm:w-[48%] bg-neutral-800/70 hover:scale-105 p-4 rounded-xl article transition-all duration-200 ease-in-out"
+>
+  <img
+    src={article.image}
+    class="w-full object-cover rounded-md aspect-video mb-4"
+  />
+  <div>
+    <h2 class="font-medium text-sm md:text-base">{article.title}</h2>
+    <p class="text-sm text-white/40">{article.description}</p>
+    <p class="text-white/50 mt-3 text-right text-sm">{article.date}</p>
+  </div>
+</a>
