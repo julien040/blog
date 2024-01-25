@@ -103,6 +103,7 @@ article li {
 }
 
 article pre {
+  margin-top: 8px;
   margin-bottom: 12px;
   padding: 12px;
   border-radius: 8px;
