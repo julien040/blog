@@ -9,11 +9,13 @@ const blogCollectionSchema = z.object({
     z.enum(["Other", "Behind the Scenes", "Tools Presentation"])
   ),
   modified: z.string().regex(/^\d{2}-\d{2}-\d{4}$/),
-  image: z
-    .string()
-    .endsWith(".jpg")
-    .or(z.string().endsWith(".png"))
-    .or(z.string().endsWith(".gif")),
+  image: z.optional(
+    z
+      .string()
+      .endsWith(".jpg")
+      .or(z.string().endsWith(".png"))
+      .or(z.string().endsWith(".gif"))
+  ),
 });
 
 const projectCollectionSchema = z.object({
@@ -48,6 +50,7 @@ type BlogItem = z.infer<typeof blogCollectionSchema>;
 export const collections = {
   articles: blogCollection,
   portfolio: portfolioCollection,
+  stackoverflow: blogCollection,
 };
 
 export type { BlogItem };

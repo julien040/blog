@@ -5,7 +5,17 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 
 export async function getArticles(): Promise<Article[]> {
-  const articles = await getCollection("articles");
+  return _getArticles("articles");
+}
+
+export async function getStackOverflow(): Promise<Article[]> {
+  return _getArticles("stackoverflow");
+}
+
+export async function _getArticles(
+  collection: "article" | "stackoverflow"
+): Promise<Article[]> {
+  const articles = await getCollection(collection);
 
   return articles
     .map((blogEntry) => {
@@ -15,7 +25,7 @@ export async function getArticles(): Promise<Article[]> {
         title,
         date: date,
         description,
-        url: "/articles/" + blogEntry.slug,
+        url: `/${collection}/` + blogEntry.slug,
         image: image,
         modified: modified,
         category: category,

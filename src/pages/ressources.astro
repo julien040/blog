@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Global.astro";
+import LinkFullWidth from "../components/LinkFullWidth.astro";
+---
+
+<Layout
+  title="Ressources"
+  description=`Find my personal Stack Overflow and TIL, an attempt at documenting my recent learnings.`
+>
+  <h2 class="text-2xl">Ressources</h2>
+  <p class="text-sm text-white/70">
+    Here is a list of ressources you might find useful.
+  </p>
+  <LinkFullWidth
+    link="/stackoverflow"
+    title="Stack Overflow"
+    description="I try to document the bugs I spend hours on, so that I don't have to spend hours on them again."
+    icon="bug"
+  />
+  <LinkFullWidth
+    link="/rss"
+    title="RSS"
+    description="Be the first to know when I publish a new article with my RSS feeds."
+    icon="rss"
+  />
+</Layout>

@@ -227,6 +227,15 @@ declare module 'astro:content' {
   data: InferEntrySchema<"portfolio">
 } & { render(): Render[".md"] };
 };
+"stackoverflow": {
+"TypeError: 'coroutine' object is not subscriptable.md": {
+	id: "TypeError: 'coroutine' object is not subscriptable.md";
+  slug: "typeerror-coroutine-object-is-not-subscriptable";
+  body: string;
+  collection: "stackoverflow";
+  data: InferEntrySchema<"stackoverflow">
+} & { render(): Render[".md"] };
+};
 
 	};
 

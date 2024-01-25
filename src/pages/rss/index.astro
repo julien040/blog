@@ -1,0 +1,20 @@
+---
+import Global from "../../layouts/Global.astro";
+import LinkFullWidth from "../../components/LinkFullWidth.astro";
+---
+
+<Global title="RSS feeds - Julien C" description="RSS feeds for my blog">
+  <h1 class="text-xl">RSS feeds</h1>
+  <LinkFullWidth
+    link="/rss/articles.xml"
+    title="Articles"
+    description="RSS feed for articles"
+    icon="rss"
+  />
+  <LinkFullWidth
+    link="/rss/stack-overflow.xml"
+    title="My personal Stack Overflow feed"
+    description="A collection of articles about errors I encountered and solved"
+    icon="rss"
+  />
+</Global>

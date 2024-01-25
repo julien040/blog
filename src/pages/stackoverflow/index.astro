@@ -1,0 +1,41 @@
+---
+import { getStackOverflow } from "../../utils/getArticles";
+import Global from "../../layouts/Global.astro";
+
+const articles = await getStackOverflow();
+---
+
+<Global
+  title="My personal Stack Overflow"
+  description="I try to document my errors so that people can find help and don't have to go through the same pain."
+>
+  <h1 class="text-2xl text-white/90">
+    My personal Stack Overflow
+    <span class="text-gray-500 text-sm">
+      {articles.length} articles
+    </span>
+  </h1>
+  <p class="text-sm text-white/60">
+    This is an attempt at documenting my errors so that people can find help and
+    don't have to go through the same pain. It also helps me to remember how I
+    solved a problem in the past because I'm kinda dory sometimes.
+  </p>
+  <div class="flex flex-col gap-2 mt-6">
+    {
+      articles.map((article) => (
+        <a
+          href={article.url}
+          class="border-b-white border-b-[1px] border-b-white/20 pb-2"
+        >
+          <div class="flex justify-between">
+            <h2 class="text-xl text-white/90">{article.title}</h2>
+            <p class="text-gray-500 text-sm">{article.date}</p>
+          </div>
+          <p class="text-gray-500 text-sm">{article.description}</p>
+
+          <a class="text-gray-500 text-right text-xs" />
+        </a>
+      ))
+    }
+  </div>
+</Global>

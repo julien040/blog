@@ -14,6 +14,7 @@
     "@types/react": "^18.2.12",
     "@types/react-dom": "^18.2.5",
     "astro": "^4.2.4",
+    "astro-icon": "^1.0.2",
     "astro-imagetools": "^0.6.10",
     "dayjs": "^1.11.5",
     "remark-breaks": "^3.0.3",

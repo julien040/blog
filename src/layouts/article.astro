@@ -7,7 +7,7 @@ type Props = {
   date: string;
   modified: string;
   description: string;
-  image: string;
+  image?: string;
   project_url?: string;
 };
 
@@ -50,12 +50,16 @@ import "../styles/article.css";
       annotation.show();
     }); */
   </script>
-  <div class="max-w-2xl mx-auto">
-    <img
-      class="w-full object-cover rounded-lg aspect-video mb-4 md:mt-8 transition-all"
-      src={image}
-      alt={title}
-    />
+  <div class="max-w-[80ch] mx-auto">
+    {
+      image && (
+        <img
+          class="w-full object-cover rounded-lg aspect-video mb-4 md:mt-8 transition-all"
+          src={image}
+          alt={title}
+        />
+      )
+    }
 
     <h1
       class="text-xl mb-1 max-w-fit font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent md:text-2xl"
