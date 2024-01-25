@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
-import remarkToc from 'remark-toc'
+import remarkToc from "remark-toc";
 import remarkBreaks from "remark-breaks";
 
 import tailwind from "@astrojs/tailwind";
@@ -11,4 +11,5 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkToc, remarkBreaks],
   },
+  site: "https://julienc.me",
 });

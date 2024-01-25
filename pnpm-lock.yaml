@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@astrojs/rss':
+    specifier: ^4.0.3
+    version: 4.0.3
   '@types/react':
     specifier: ^18.2.12
     version: 18.2.12
@@ -143,6 +146,13 @@ packages:
       - supports-color
       - vite
     dev: true
+
+  /@astrojs/rss@4.0.3:
+    resolution: {integrity: sha512-l9g2oISdfHb+0NM2GkyRhbQMJzmIkviApXMOKrz64F9NoboTR/F4zaqOAKPuK4nB48hOqQAw1B+EfyftEDbeeg==}
+    dependencies:
+      fast-xml-parser: 4.3.3
+      kleur: 4.1.5
+    dev: false
 
   /@astrojs/tailwind@5.1.0(astro@4.2.4)(tailwindcss@3.3.2):
     resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
@@ -2069,6 +2079,13 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.5
+
+  /fast-xml-parser@4.3.3:
+    resolution: {integrity: sha512-coV/D1MhrShMvU6D0I+VAK3umz6hUaxxhL0yp/9RjfiYUfAv14rDhGQL+PLForhMdr0wq3PiV07WtkkNjJjNHg==}
+    hasBin: true
+    dependencies:
+      strnum: 1.0.5
+    dev: false
 
   /fastq@1.13.0:
     resolution: {integrity: sha512-YpkpUnK8od0o1hmeSc7UUs/eB/vIPWJYjKck2QKIzAf71Vm1AAQ3EbuZB3g2JIy+pg+ERD0vqI79KyZiB2e2Nw==}
@@ -4280,6 +4297,10 @@ packages:
     engines: {node: '>=0.10.0'}
     requiresBuild: true
     optional: true
+
+  /strnum@1.0.5:
+    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
+    dev: false
 
   /strtok3@7.0.0:
     resolution: {integrity: sha512-pQ+V+nYQdC5H3Q7qBZAz/MO6lwGhoC2gOAjuouGf/VO0m7vQRh8QNMl2Uf6SwAtzZ9bOw3UIeBukEGNJl5dtXQ==}
