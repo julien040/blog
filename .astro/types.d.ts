@@ -182,6 +182,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"Organizing_100,000_articles_in_a_folder_hierarchy_automatically.md": {
+	id: "Organizing_100,000_articles_in_a_folder_hierarchy_automatically.md";
+  slug: "organizing_100000_articles_in_a_folder_hierarchy_automatically";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "Welcome_to_my_blog.md": {
 	id: "Welcome_to_my_blog.md";
   slug: "welcome_to_my_blog";

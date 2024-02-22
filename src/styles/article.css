@@ -45,9 +45,19 @@ article span {
 }
 
 /* Remove underline from links inside a list */
-article a:not(ul a) {
+article a {
   text-decoration: underline;
   /* color: #ececec; */
+}
+
+/* Remove underline for the table of contents 
+and remove the padding bottom for a more condensed look
+*/
+article #table-of-contents + ul > li a {
+  text-decoration: none;
+}
+article #table-of-contents + ul ul {
+  padding-bottom: 4px;
 }
 
 article strong {
