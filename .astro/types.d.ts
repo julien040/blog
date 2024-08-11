@@ -175,6 +175,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"articles": {
+"Apple_notes_as_cms.md": {
+	id: "Apple_notes_as_cms.md";
+  slug: "apple_notes_as_cms";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "Extract_embeddings_Hacker_News_article.md": {
 	id: "Extract_embeddings_Hacker_News_article.md";
   slug: "extract_embeddings_hacker_news_article";
