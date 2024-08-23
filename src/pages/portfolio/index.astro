@@ -7,57 +7,64 @@ const projects: Project[] = await getProjects();
 ---
 
 <Layout
-  title="Julien"
-  description="I'm Julien. I occasionnaly publish articles about programming and tech."
+    title="Julien"
+    description="I'm Julien. I occasionnaly publish articles about programming and tech."
 >
-  <h1
-    class="text-xl md:text-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-  >
-    My portfolio
-  </h1>
-  <p class="text-neutral-400 text-sm mt-1 mb-6">
-    This page compiles the list of the projects I have created. If you are a
-    recruiter, feel free to check my experiences here.
-  </p>
+    <h1
+        class="text-xl md:text-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+    >
+        My portfolio
+    </h1>
+    <p class="text-neutral-400 text-sm mt-1 mb-6">
+        This page compiles the list of the projects I have created. If you are a
+        recruiter, feel free to check my experiences here.
+    </p>
 
-  {
-    projects.map((project) => {
-      const started = project.started;
-      const ended = project.finished;
-      const dateString = `${started} - ${ended === undefined ? "Now" : ended}`;
-      return (
-        <a
-          href={project.url}
-          class="project flex gap-3 md:gap-4 flex-col md:flex-row items-start bg-white/5 hover:scale-[102%] my-4  rounded-xl  p-6"
-        >
-          <img
-            src={project.image}
-            alt={project.title}
-            class="w-full rounded-md md:w-1/3 aspect-video object-cover"
-          />
-          <div class="flex items-start justify-start flex-col self-stretch w-full">
-            <h2
-              id="title"
-              class="text-xl tracking-tighter font-semibold text-white/80"
-            >
-              {project.title}
-            </h2>
-            <p class="text-neutral-500 text-sm">{project.description}</p>
-            <p class="md:text-sm text-xs  mt-4 md:mt-auto self-end text-neutral-400">
-              {dateString}
-            </p>
-          </div>
-        </a>
-      );
-    })
-  }
+    {
+        projects.map((project) => {
+            const started = project.started;
+            const ended = project.finished;
+            const dateString = `${started} - ${ended === undefined ? "Now" : ended}`;
+            return (
+                <a
+                    href={project.url}
+                    class="project flex gap-3 md:gap-4 flex-col md:flex-row items-start bg-white/5 hover:scale-[102%] my-4  rounded-xl  p-6"
+                >
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        class="w-full rounded-md md:w-1/3 aspect-video object-cover"
+                    />
+                    <div class="flex items-start justify-start flex-col self-stretch w-full">
+                        <h2
+                            id="title"
+                            class="text-xl tracking-tighter font-semibold text-white/80"
+                        >
+                            {project.title}
+                        </h2>
+                        <p class="text-neutral-500 text-sm whitespace-pre-wrap">
+                            {project.description}
+                        </p>
+                        <div class="flex flex-row justify-between mt-4 md:mt-auto md:text-sm text-xs w-full">
+                            <p class="text-neutral-400">{dateString}</p>
+                            {project.stats && (
+                                <p class="py-1 px-3 whitespace-pre-wrap bg-neutral-700/60 rounded-lg text-neutral-300">
+                                    {project.stats ?? ""}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                </a>
+            );
+        })
+    }
 </Layout>
 
 <style>
-  #title {
-    margin-top: 0;
-  }
-  .project {
-    transition: transform 0.15s ease-in-out;
-  }
+    #title {
+        margin-top: 0;
+    }
+    .project {
+        transition: transform 0.15s ease-in-out;
+    }
 </style>

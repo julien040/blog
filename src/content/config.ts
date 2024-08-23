@@ -33,6 +33,7 @@ const projectCollectionSchema = z.object({
         .or(z.string().endsWith(".png"))
         .or(z.string().endsWith(".gif")),
     project_url: z.optional(z.string()),
+    stats: z.optional(z.string()),
 });
 
 const blogCollection = defineCollection({

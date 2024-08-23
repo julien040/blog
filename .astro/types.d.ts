@@ -205,6 +205,20 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "portfolio": {
+"Alexandria library.md": {
+	id: "Alexandria library.md";
+  slug: "alexandria-library";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"Anyquery.md": {
+	id: "Anyquery.md";
+  slug: "anyquery";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
 "Fluent UI emoji.md": {
 	id: "Fluent UI emoji.md";
   slug: "fluent-ui-emoji";
@@ -215,6 +229,13 @@ declare module 'astro:content' {
 "Gut.md": {
 	id: "Gut.md";
   slug: "gut";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"HN Recommend.md": {
+	id: "HN Recommend.md";
+  slug: "hn-recommend";
   body: string;
   collection: "portfolio";
   data: InferEntrySchema<"portfolio">
