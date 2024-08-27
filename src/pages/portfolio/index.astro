@@ -15,7 +15,7 @@ const projects: Project[] = await getProjects();
     >
         My portfolio
     </h1>
-    <p class="text-neutral-400 text-sm mt-1 mb-6">
+    <p class="text-neutral-400 text-sm mt-1 mb-4">
         This page compiles the list of the projects I have created. If you are a
         recruiter, feel free to check my experiences here.
     </p>
@@ -28,7 +28,8 @@ const projects: Project[] = await getProjects();
             return (
                 <a
                     href={project.url}
-                    class="project flex gap-3 md:gap-4 flex-col md:flex-row items-start bg-white/5 hover:scale-[102%] my-4  rounded-xl  p-6"
+                    class="project flex gap-3 md:gap-4 flex-col md:flex-row items-start bg-black/50 border border-[#222222] hover:scale-[102%] my-3 rounded-xl px-6 py-5"
+                    style="box-shadow: 0px 0px 68.5px 0px rgba(107, 29, 180, 0.15);"
                 >
                     <img
                         src={project.image}
@@ -48,7 +49,7 @@ const projects: Project[] = await getProjects();
                         <div class="flex flex-row justify-between mt-4 md:mt-auto md:text-sm text-xs w-full">
                             <p class="text-neutral-400">{dateString}</p>
                             {project.stats && (
-                                <p class="py-1 px-3 whitespace-pre-wrap bg-neutral-700/60 rounded-lg text-neutral-300">
+                                <p class="py-1 px-3 whitespace-pre-wrap bg-neutral-800/80 rounded-lg text-neutral-300">
                                     {project.stats ?? ""}
                                 </p>
                             )}

@@ -8,36 +8,37 @@ const articles = await getArticles();
 ---
 
 <Layout
-  title="Julien"
-  description="I'm Julien, a 19 years old developer. I occasionnaly publish articles about programming and tech."
+    title="Julien"
+    description="I'm Julien, a 19 years old developer. I occasionnaly publish articles about programming and tech."
 >
-  <div class="">
-    <h1
-      class="max-w-fit lg:text-4xl md:text-3xl text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-    >
-      Hi there <span
-        class="lg:text-4xl md:text-3xl text-2xl font-bold text-black">👋</span
-      >
-    </h1>
-    <p class="text-md mt-2 text-white/60 text-sm">
-      I'm Julien, a student in computer science. <br />
-      On this website, I publish articles about what I've discovered and created.
-    </p>
-  </div>
+    <div class="">
+        <h1
+            class="max-w-fit lg:text-4xl md:text-3xl text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+        >
+            Hi there <span
+                class="lg:text-4xl md:text-3xl text-2xl font-bold text-black"
+                >👋</span
+            >
+        </h1>
+        <p class="text-md mt-2 text-white/60 text-sm">
+            I'm Julien, a student in computer science. <br />
+            On this website, I publish articles about what I've discovered and created.
+        </p>
+    </div>
 
-  <h2 class="text-base md:text-xl mt-8 mb-4 text-white/90">
-    {articles.length > 1 ? "Latest articles" : "Latest article"}
-  </h2>
-  <div class="flex flex-wrap gap-3">
-    {articles.map((article) => <ArticleCard article={article} />)}
-  </div>
+    <h2 class="text-base md:text-xl mt-8 mb-4 text-white/90">
+        {articles.length > 1 ? "Latest articles" : "Latest article"}
+    </h2>
+    <div class="flex flex-wrap justify-between gap-3">
+        {articles.map((article) => <ArticleCard article={article} />)}
+    </div>
 </Layout>
 
 <style>
-  a:hover {
-    transform: scale(1.03);
-  }
-  .article {
-    transition: transform 0.15s ease-in-out;
-  }
+    a:hover {
+        transform: scale(1.03);
+    }
+    .article {
+        transition: transform 0.15s ease-in-out;
+    }
 </style>
