@@ -1,15 +1,17 @@
 ---
 export interface Props {
-	title: string;
-	description: string;
-	href: string;
+    title: string;
+    description: string;
+    href: string;
 }
 
 const { href, title, description } = Astro.props;
 ---
 
 <a href={href}>
-    <div class="w-full flex gap-2 p-4 rounded-xl bg-gradient-to-tl from-[#f093fb] to-[#f5576c]  transition-all duration-200 ease-in-out">
+    <div
+        class="w-full flex gap-2 p-4 rounded-xl bg-gradient-to-bl from-[#a8c0ff] to-[#3f2b96] hover:opacity-90 transition-all duration-200 ease-in-out"
+    >
         <div class="w-full">
             <div class="text-lg font-semibold">{title}</div>
             <div class="text-sm text-white/70">{description}</div>
@@ -18,6 +20,5 @@ const { href, title, description } = Astro.props;
         <p>
             {">"}
         </p>
-
     </div>
 </a>

@@ -4,148 +4,151 @@ article h3,
 article h4,
 article h5,
 article h6 {
-  font-weight: 600;
-  color: #fffffffc;
-  margin-bottom: 4px;
-  margin-top: 16px;
+    font-weight: 600;
+    color: #fffffffc;
+    margin-bottom: 4px;
+    margin-top: 16px;
 }
 article h1 {
-  font-size: 36px;
+    font-size: 36px;
 }
 
 article a:hover {
-  /* Gradient */
-  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  text-decoration: none;
-  transition: all 0.25s ease-in-out;
+    /* Gradient */
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-decoration: underline;
+    transition: all 0.2s ease-in-out;
 }
 
 article h2 {
-  font-size: 24px;
+    font-size: 24px;
 }
 article h3 {
-  font-size: 20px;
+    font-size: 20px;
 }
 article h4,
 article h5,
 article h6 {
-  font-size: 18px;
+    font-size: 18px;
 }
 article p,
 article li,
 article a,
 article span {
-  font-size: 15px;
-  font-weight: 400;
-  color: #b9b8b8;
+    font-size: 14px;
+    font-weight: 400;
+    color: #adadad;
 }
 
 /* Remove underline from links inside a list */
 article a {
-  text-decoration: underline;
-  /* color: #ececec; */
+    text-decoration: underline;
+    /* color: #ececec; */
 }
 
 /* Remove underline for the table of contents 
 and remove the padding bottom for a more condensed look
 */
 article #table-of-contents + ul > li a {
-  text-decoration: none;
+    text-decoration: none;
 }
 article #table-of-contents + ul ul {
-  padding-bottom: 4px;
+    padding-bottom: 4px;
 }
 
 article strong {
-  font-weight: 600;
-  color: #ffffffd5;
+    font-weight: 600;
+    color: #ffffffd5;
 }
 
 /* Put a nice gray background for quotes */
 article blockquote {
-  padding: 16px 16px;
-  background-color: #ffffff22;
-  margin: 16px 0;
-  border-radius: 8px;
+    padding: 16px 16px;
+    background-color: #ffffff22;
+    margin: 16px 0;
+    border-radius: 8px;
 }
 
 /* Remove the padding bottom of a p inside a blockquote
     so that the margin is equal from top and bottom */
 article blockquote > p,
 article li p {
-  padding-bottom: 0;
+    padding-bottom: 0;
 }
 
 article p + ul {
-  padding-bottom: 12px;
-  padding-top: 4px;
+    padding-bottom: 12px;
+    padding-top: 4px;
 }
 
 article p + ol {
-  padding-bottom: 12px;
+    padding-bottom: 12px;
 }
 
 article p + blockquote {
-  padding-bottom: 12px;
+    padding-bottom: 12px;
 }
 
 article p + p {
-  padding-top: 12px;
+    padding-top: 12px;
 }
 
 article img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin: 16px 0;
+    max-width: 75%;
+    border-radius: 8px;
+    margin: 16px auto;
+    box-shadow: 0px 0px 58.5px 0px rgba(136, 57, 209, 0.409);
+    opacity: 0.95;
 }
 
 article ul,
 article ol {
-  padding-inline-start: 20px;
+    padding-inline-start: 20px;
 }
 
 article li {
-  list-style-type: disc;
+    list-style-type: disc;
 }
 
 article pre {
-  margin-top: 8px;
-  margin-bottom: 12px;
-  padding: 12px;
-  border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 28.5px 0px rgba(209, 83, 183, 0.146);
 }
 
 article pre code span {
-  font-size: 13px;
+    font-size: 13px;
 }
 
 /* For mobile screen */
 @media (max-width: 640px) {
-  article h1 {
-    font-size: 24px;
-  }
-  article h2 {
-    font-size: 20px;
-  }
-  article h3 {
-    font-size: 18px;
-  }
-  article h4 {
-    font-size: 16px;
-  }
-  article h5,
-  article h6 {
-    font-size: 16px;
-  }
-  article p,
-  article li,
-  article a,
-  article span {
-    font-weight: 400;
-    font-size: 14px;
-  }
+    article h1 {
+        font-size: 24px;
+    }
+    article h2 {
+        font-size: 20px;
+    }
+    article h3 {
+        font-size: 18px;
+    }
+    article h4 {
+        font-size: 16px;
+    }
+    article h5,
+    article h6 {
+        font-size: 16px;
+    }
+    article p,
+    article li,
+    article a,
+    article span {
+        font-weight: 400;
+        font-size: 14px;
+    }
 }
