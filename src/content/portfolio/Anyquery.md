@@ -4,7 +4,7 @@ description: "Query almost anything with SQL whether it's a file (JSON, CSV, Par
 started: 01-04-2024
 image: "/images/header/anyquery.png"
 project_url: https://anyquery.dev
-stats: 250 ✨ on GitHub
+stats: 300 ✨ on GitHub
 ---
 
 <div class="flex gap-4">
@@ -13,7 +13,6 @@ stats: 250 ✨ on GitHub
     <img src="https://img.shields.io/github/issues/julien040/anyquery" alt="GitHub issues">
     <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fregistry.anyquery.dev%2Fv0%2Fregistry%2F&query=%24.plugins_count&label=Integrations%20count&cacheSeconds=3600" alt="Dynamic JSON Badge">
 </div>
-
 
 Anyquery is a SQL query engine that allows you to run SQL queries on pretty much anything. It supports querying [JSON](https://anyquery.dev/docs/usage/querying-files/#json), [CSV](https://anyquery.dev/docs/usage/querying-files/#csv), [Parquet](https://anyquery.dev/docs/usage/querying-files/#parquet), SQLite, [Airtable bases](https://anyquery.dev/integrations/airtable/), [Google Sheets](https://anyquery.dev/integrations/google_sheets/), [Notion databases](https://anyquery.dev/integrations/notion/), [logs file](https://anyquery.dev/docs/usage/querying-log/) using [Grok](https://www.elastic.co/guide/en/elasticsearch/reference/current/grok.html), and more. It also supports running SQL queries on [remote files](https://anyquery.dev/docs/usage/querying-files/#remote-files) (HTTP, S3, GCS) and local apps ([Apple Notes](https://anyquery.dev/integrations/notes/), [Apple Reminders](https://anyquery.dev/integrations/reminders/), [Google Chrome Tabs](https://anyquery.dev/integrations/chrome/), etc.).
 It's built on top of [SQLite](https://www.sqlite.org) and uses [plugins](https://anyquery.dev/integrations/) to extend its functionality.

@@ -1,8 +1,8 @@
 ---
 title: "Apple Notes is my CMS"
-description: How to use the simplicity of Apple Notes as a CMS (Content Management System)for your blog.
+description: How to use the simplicity of Apple Notes as a CMS (Content Management System) for your blog.
 date: 11-08-2024
-modified: 11-08-2024
+modified: 04-09-2024
 image: "/images/header/apple-notes.png"
 project_url: https://til.julienc.me
 ---
@@ -19,7 +19,59 @@ Well, what if you could use it as a CMS to manage the content of your blog? That
 
 ## Querying Apple Notes
 
-We need a way to fetch the notes from Apple Notes. To do so, we’ll use Anyquery, it’s a SQL database that can query almost anything, including Apple Notes.
+We need a way to fetch the notes from Apple Notes. If you want to just read about how to do this, skip to [Getting the data](#getting-the-data).
+If you want to learn more about my approach, keep reading.
+
+### Writing the plugin
+
+[Anyquery](https://anyquery.dev/) is a SQLite-based query engine that can query almost anything. It has a plugin system, and I therefore created a plugin to query Apple Notes.
+
+You might not be aware, but macOS ships with [AppleScript](https://en.wikipedia.org/wiki/AppleScript) for more than 30 years. It’s a scripting language that allows you to control applications on macOS. It could be useful to query Apple Notes.
+
+While it uses natural language, it’s quite rigid and error messages are not very helpful. However, I know a thing or two about JavaScript, so I decided to write a script in JavaScript using its sibling, [JXA](https://developer.apple.com/library/archive/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/Articles/Introduction.html). It has the same capabilities as AppleScript (controlling applications, etc.) but with syntax that is more familiar to me. 
+The documentation is literally inexistent, but you can find some [examples](https://github.com/JXA-Cookbook/JXA-Cookbook#) on GitHub.
+
+```js
+// Request the Notes application
+const notes = Application("Notes");
+
+// List all accounts
+for (const account of notes.accounts()) {
+    const accountName = account.name();
+    // For each folder, list all notes
+    for (const folder of account.folders()) {
+        const folderName = folder.name();
+        // Print a JSON object for each note
+        for (const note of folder.notes()) {
+            console.log(
+                JSON.stringify({
+                    id: note.id(),
+                    name: note.name(),
+                    creationDate: note.creationDate(),
+                    modificationDate: note.modificationDate(),
+                    htmlBody: note.body(),
+                    folder: folderName,
+                    account: accountName,
+                }),
+            );
+        }
+    }
+}
+```
+
+I wrote this little script that helps me to list all notes in all folders of all accounts. Because it prints a JSON object for each note, I can easily parse it using a [JSONlines](https://jsonlines.org/) parser.
+
+You can then run this script using the `osascript` command:
+
+```bash
+osascript -l JavaScript script.js > notes.json
+```
+
+Once done, I just had to [create a plugin](https://anyquery.dev/docs/developers/plugins/create-plugin/) for Anyquery to query the notes. You can find the plugin at [https://github.com/julien040/anyquery/tree/main/plugins/notes](https://github.com/julien040/anyquery/tree/main/plugins/notes)
+
+### Getting the data
+
+Now that the plugin is created, we can query the notes using Anyquery. Here is how to do it:
 
 1. Install Anyquery at [https://anyquery.dev/docs/#installation](https://anyquery.dev/docs/#installation)
 2. Install the Apple Notes plugin: `anyquery install notes`
@@ -52,7 +104,7 @@ Our last task is to connect the website to it
 
 ## Connecting the website
 
-Personally, I’m using Astro.JS. Our first task will be to generate the static path for each entry. 
+Personally, I’m using [Astro](https://astro.build). Our first task will be to generate the static path for each entry.
 To do so, I can just do `import notes from "../../notes.json";` and pass it to `export function getStaticPaths()`. I’m also using a slugify function to ensure the generated URLs are valid.
 
 ```js
