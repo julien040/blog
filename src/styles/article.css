@@ -47,6 +47,8 @@ article span {
 /* Remove underline from links inside a list */
 article a {
     text-decoration: underline;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     /* color: #ececec; */
 }
 
