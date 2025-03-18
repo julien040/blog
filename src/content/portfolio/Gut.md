@@ -5,7 +5,7 @@ started: 22-12-2022
 finished: 31-01-2024
 image: "/images/header/gut.png"
 project_url: https://gut-cli.dev
-stats: 460 ✨ on GitHub
+stats: 495 ✨ on GitHub
 ---
 
 Gut is an alternative git CLI for Windows, macOS, and Linux. I’ve built it using Golang.

@@ -4,7 +4,7 @@ description: "Query almost anything with SQL whether it's a file (JSON, CSV, Par
 started: 01-04-2024
 image: "/images/header/anyquery.png"
 project_url: https://anyquery.dev
-stats: 300 ✨ on GitHub
+stats: 625 ✨ on GitHub
 ---
 
 <div class="flex gap-4">
